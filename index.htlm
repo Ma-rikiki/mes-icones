@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Galerie SVG</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f5f5f5;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
+    h1 {
+      margin-bottom: 20px;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 20px;
+    }
+    .icon-card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 150px;
+    }
+    .icon-card img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+  </style>
+</head>
+<body>
+  <h1>Galerie d'icônes SVG</h1>
+  <div class="gallery" id="gallery"></div>
+
+  <script>
+    // Liste de tes icônes
+    const icons = [
+      "icone1.svg",
+      "icone2.svg",
+      "icone3.svg"
+    ];
+
+    const gallery = document.getElementById('gallery');
+    icons.forEach(icon => {
+      const card = document.createElement('div');
+      card.className = 'icon-card';
+      card.innerHTML = `<img src="icons/${icon}" alt="${icon}">`;
+      gallery.appendChild(card);
+    });
+  </script>
+</body>
+</html>
